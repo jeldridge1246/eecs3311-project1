@@ -31,7 +31,7 @@ public class MyPanel extends JPanel {
 	 */
 	public static void drawUI() {
 		MyPanel shapes = new MyPanel();
-		JFrame frame = new JFrame("Display a rectangle");
+		JFrame frame = new JFrame("Load and sort shapes");
 		JPanel container = new JPanel();
 		container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
 		JPanel panel = new JPanel(new FlowLayout());
