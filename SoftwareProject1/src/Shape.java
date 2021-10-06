@@ -2,7 +2,7 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.util.Random;
 
-public class Shape implements Comparable<Shape> {
+abstract class Shape implements Comparable<Shape> {
 	private double area;
 	private int height;
 	private int width;
@@ -126,19 +126,15 @@ public class Shape implements Comparable<Shape> {
 	}
 	
 	/**
-	 * Creates the shape on the window. Meant to be overridden by a child shape.
+	 * Creates the shape on the window. Abstract method.
 	 * @param g2d the Graphics2D component
 	 */
-	public void fill(Graphics2D g2d) {
-		System.out.println("DEFAULT FILL");
-	}
+	public abstract void fill(Graphics2D g2d);
 	
 	/**
-	 * Calculates the area of the shape. Meant to be overridden by a child shape. Sets area to -1 if not overridden.
+	 * Calculates the area of the shape. Abstract method.
 	 */
-	public void calculateArea() {
-		this.area = -1;
-	}
+	public abstract void calculateArea();
 
 	/**
 	 * Compares one shape to another based on their surface areas. 
