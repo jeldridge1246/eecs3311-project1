@@ -88,13 +88,11 @@ public class MyPanel extends JPanel {
 	 * sort the shapes.
 	 */
 	public void sortShapes() {
-//		for (Shape s : shapeList) {
-//			System.out.println(s.getNum());
-//		}
+		if (shapeList.size() == 0) {
+			System.out.println("ERROR: Empty list.");
+			return;
+		}
 		SortingTechnique.bubbleSort(shapeList);
-//		for (Shape s : shapeList) {
-//			System.out.println(s.getNum());
-//		}
 		for (int i = 0; i < 6; i++) {
 			shapeList.get(i).setNum(i);
 		}
