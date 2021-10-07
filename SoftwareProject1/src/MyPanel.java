@@ -22,7 +22,6 @@ public class MyPanel extends JPanel {
 		Graphics2D g2d = (Graphics2D) g;
 		for (Shape s : shapeList) {
 			s.fill(g2d);
-//			System.out.println(s.getArea()); // TESTING
 		}
 	}
 	
@@ -41,17 +40,15 @@ public class MyPanel extends JPanel {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		panel2.add(shapes);
 		panel.add(loadButton);
-		loadButton.addActionListener(new ActionListener() {
+		loadButton.addActionListener(new ActionListener() { // "Load shapes" button
 			public void actionPerformed(ActionEvent e) {
 				shapes.loadNew();
-//				System.out.println("Load Shapes"); // TESTING
 			}
 		});
 		panel.add(sortButton);
-		sortButton.addActionListener(new ActionListener() {
+		sortButton.addActionListener(new ActionListener() { // "Sort shapes" button
 			public void actionPerformed(ActionEvent e) {
 				shapes.sortShapes();
-//				System.out.println("Sort shapes"); // TESTING
 			}
 		});
 		container.add(panel);
@@ -71,14 +68,14 @@ public class MyPanel extends JPanel {
 		int shapeType;
 		int randWidth;
 		int randHeight;
-		final int MIN = 1;
-		final int MAX = 3;
+		final int MIN = 1; // Min shapeType (1 = Circle)
+		final int MAX = 3; // Max shapeType (3 = Rectangle)
 		shapeList.clear();
 		for (int i = 0; i < 6; i++) {
 			shapeType = (int) Math.floor(Math.random() * (MAX - MIN + 1) + MIN);
 			randWidth = (int) Math.floor(Math.random() * (100 - 10) + 10);
 			randHeight = (int) Math.floor(Math.random() * (100 - 10) + 10);
-			shapeList.add(fact.createNew(shapeType, randWidth, randHeight, i));
+			shapeList.add(fact.createNew(shapeType, randWidth, randHeight, i)); // Adds a new Shape to list
 		}
 		repaint();
 	}
@@ -88,13 +85,13 @@ public class MyPanel extends JPanel {
 	 * sort the shapes.
 	 */
 	public void sortShapes() {
-		if (shapeList.size() == 0) {
+		if (shapeList.size() == 0) { // If list is empty
 			System.out.println("ERROR: Empty list.");
 			return;
 		}
-		SortingTechnique.bubbleSort(shapeList);
+		SortingTechnique.bubbleSort(shapeList); // Call SortingTechnique to sort shapes
 		for (int i = 0; i < 6; i++) {
-			shapeList.get(i).setNum(i);
+			shapeList.get(i).setNum(i); // Reorders the shapes for drawing on the window
 		}
 		repaint();
 	}

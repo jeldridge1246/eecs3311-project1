@@ -17,7 +17,7 @@ public class ShapeFactory {
 			return new Square(width, num);
 		} else if (shapeType == 3) {
 			return new Rectangle(width, height, num);
-		} else {
+		} else { 
 			System.out.println("WRONG TYPE");
 			return null;
 		}
