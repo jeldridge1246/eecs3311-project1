@@ -17,9 +17,8 @@ public class Circle extends Shape {
 	}
 	
 	/**
-	 * Overrides the <code>fill()</code> method of the <code>Shape</code> class. Creates a circle on the screen.
+	 * Implements the <code>fill()</code> method of the <code>Shape</code> class. Creates a circle on the screen.
 	 */
-	@Override
 	public void fill(Graphics2D g2d) {
 		int x = super.getNum() * 100;
 		g2d.setColor(super.getColor());
@@ -27,9 +26,8 @@ public class Circle extends Shape {
 	}
 	
 	/**
-	 * 
+	 * Implements the <code>calculateArea()</code> method fo the <code>Shape</code> class. 
 	 */
-	@Override
 	public void calculateArea() {
 		super.setArea(Math.PI * Math.pow(super.getWidth() / 2, 2));
 	}
