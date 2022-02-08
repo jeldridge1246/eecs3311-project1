@@ -1,5 +1,7 @@
 # eecs3311-project1
 
+This is a simple Java program that will generate random shapes on a window and sort them on request based on size. 
+
 TO RUN THE PROJECT:
 
 There are two ways to run the project:
